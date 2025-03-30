@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import sys
 import pygame
 from constants import *
@@ -30,29 +29,13 @@ def main():
 	dt = 0
 
 	while True:
-=======
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
-import pygame
-from constants import *
-
-def main():
-
-	pygame.init()
-	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
-	while True:
-		screen.fill((0,0,0))
-		pygame.display.flip()
-
->>>>>>> a20eba5 (Initial commit with basic game loop)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				return
 
 <<<<<<< HEAD
-		updatable.update(dt)
+<<<<<<< HEAD
+		updatable.update(dt) # type: ignore
 
 		for asteroid in asteroids:
 			if asteroid.collides_with(player):
@@ -79,6 +62,12 @@ def main():
 if __name__ == "__main__":
 	main()
 =======
+=======
+		screen.fill((0, 0, 0))
+
+		pygame.display.flip()
+
+		dt = clock.tick(60) / 1000
 
 	print("Starting Asteroids!")
 	print(f"Screen width: {SCREEN_WIDTH}")
