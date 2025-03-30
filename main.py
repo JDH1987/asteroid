@@ -12,7 +12,16 @@ from shot import Shot
 
 def main():
 	pygame.init()
+<<<<<<< HEAD
 	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+=======
+
+	updateable = pygame.sprite.Group()
+	drawable = pygame.sprite.Group()
+
+	Player.containers = (updateable, drawable)
+
+>>>>>>> f44bf00 (Added groups instead of calling methods directly)
 	clock = pygame.time.Clock()
 
 	updatable = pygame.sprite.Group()
@@ -81,14 +90,15 @@ if __name__ == "__main__":
 >>>>>>> 84804ef (Drew a player triangle)
 =======
 		# call the player's update method
-		player.update(dt)
+		updateable.update(dt)
 
 		# fill the screen with black
 >>>>>>> 7a88baa (Added WASD movement and turning)
 		screen.fill((0, 0, 0))
 
 		# draw the player
-		player.draw(screen)
+		for entity in drawable:
+			entity.draw(screen)
 
 		# flip the screen
 		pygame.display.flip()
