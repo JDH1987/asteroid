@@ -5,7 +5,6 @@ from circleshape import CircleShape
 class Player(CircleShape):
 	def __init__(self, x, y):
 		super().__init__(x, y, PLAYER_RADIUS) # call parent class constructor
-		self.position = pygame.Vector2(x, y) # set the position
 		self.rotation = 0 # initialize the rotation
 
 	# in the player class
@@ -18,8 +17,7 @@ class Player(CircleShape):
     		return [a, b, c]
 
 	def draw(self, screen):
-		points = self.triangle() # get the points of the triangle
-		pygame.draw.polygon(screen, "white", points, 2) # draw the triangle
+		pygame.draw.polygon(screen, "white", self.triangle(), 2) # draw the triangle
 
 	def rotate(self, dt):
 		self.rotation += PLAYER_TURN_SPEED * dt # rotate based on turn speed
