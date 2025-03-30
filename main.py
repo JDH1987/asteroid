@@ -9,6 +9,11 @@ def main():
 
 	pygame.init()
 
+	updateable = pygame.sprite.Group()
+	drawable = pygame.sprite.Group()
+
+	Player.containers = (updateable, drawable)
+
 	clock = pygame.time.Clock()
 	dt = 0
 
@@ -24,13 +29,14 @@ def main():
 				return
 
 		# call the player's update method
-		player.update(dt)
+		updateable.update(dt)
 
 		# fill the screen with black
 		screen.fill((0, 0, 0))
 
 		# draw the player
-		player.draw(screen)
+		for entity in drawable:
+			entity.draw(screen)
 
 		# flip the screen
 		pygame.display.flip()
