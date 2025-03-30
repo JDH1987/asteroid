@@ -1,6 +1,6 @@
 import sys
 import pygame
-from constants import *
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
 <<<<<<< HEAD
 from asteroid import Asteroid
@@ -47,6 +47,7 @@ def main():
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		updatable.update(dt) # type: ignore
 
 		for asteroid in asteroids:
@@ -78,6 +79,12 @@ if __name__ == "__main__":
 =======
 		# fill the screen with clack
 >>>>>>> 84804ef (Drew a player triangle)
+=======
+		# call the player's update method
+		player.update(dt)
+
+		# fill the screen with black
+>>>>>>> 7a88baa (Added WASD movement and turning)
 		screen.fill((0, 0, 0))
 
 		# draw the player

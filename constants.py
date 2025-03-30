@@ -21,5 +21,10 @@ SHOT_RADIUS = 5
 =======
 
 PLAYER_RADIUS = 20
+<<<<<<< HEAD
 
 >>>>>>> 84804ef (Drew a player triangle)
+=======
+PLAYER_TURN_SPEED = 300
+PLAYER_SPEED = 200
+>>>>>>> 7a88baa (Added WASD movement and turning)
