@@ -2,7 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
-from constants import *
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
 
 def main():
@@ -23,7 +23,10 @@ def main():
 			if event.type == pygame.QUIT:
 				return
 
-		# fill the screen with clack
+		# call the player's update method
+		player.update(dt)
+
+		# fill the screen with black
 		screen.fill((0, 0, 0))
 
 		# draw the player
