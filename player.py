@@ -70,7 +70,6 @@ class Player(CircleShape):
 		self.rotation = 0
 =======
 		super().__init__(x, y, PLAYER_RADIUS) # call parent class constructor
-		self.position = pygame.Vector2(x, y) # set the position
 		self.rotation = 0 # initialize the rotation
 >>>>>>> 7a88baa (Added WASD movement and turning)
 
@@ -85,12 +84,16 @@ class Player(CircleShape):
 
 	def draw(self, screen):
 <<<<<<< HEAD
+<<<<<<< HEAD
 		points = self.triangle()
 		pygame.draw.polygon(screen, "white", points, 2)
 >>>>>>> 84804ef (Drew a player triangle)
 =======
 		points = self.triangle() # get the points of the triangle
 		pygame.draw.polygon(screen, "white", points, 2) # draw the triangle
+=======
+		pygame.draw.polygon(screen, "white", self.triangle(), 2) # draw the triangle
+>>>>>>> 689842b (Cleaned up code)
 
 	def rotate(self, dt):
 		self.rotation += PLAYER_TURN_SPEED * dt # rotate based on turn speed

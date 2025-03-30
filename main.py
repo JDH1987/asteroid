@@ -13,14 +13,20 @@ from shot import Shot
 def main():
 	pygame.init()
 <<<<<<< HEAD
+<<<<<<< HEAD
 	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 =======
+=======
+	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+	clock = pygame.time.Clock()
+>>>>>>> 689842b (Cleaned up code)
 
 	updateable = pygame.sprite.Group()
 	drawable = pygame.sprite.Group()
 
 	Player.containers = (updateable, drawable)
 
+<<<<<<< HEAD
 >>>>>>> f44bf00 (Added groups instead of calling methods directly)
 	clock = pygame.time.Clock()
 
@@ -42,10 +48,12 @@ def main():
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 689842b (Cleaned up code)
 	# spawn player in middle of the screen
 	player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
-	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+	dt = 0
 
 >>>>>>> 84804ef (Drew a player triangle)
 	while True:
@@ -93,23 +101,30 @@ if __name__ == "__main__":
 		updateable.update(dt)
 
 		# fill the screen with black
+<<<<<<< HEAD
 >>>>>>> 7a88baa (Added WASD movement and turning)
 		screen.fill((0, 0, 0))
+=======
+		screen.fill("black")
+>>>>>>> 689842b (Cleaned up code)
 
 		# draw the player
-		for entity in drawable:
-			entity.draw(screen)
+		for obj in drawable:
+			obj.draw(screen)
 
 		# flip the screen
 		pygame.display.flip()
 
-		# cap the frame rate
+		# cap the frame rate to 60 FPS
 		dt = clock.tick(60) / 1000
 
+<<<<<<< HEAD
 	print("Starting Asteroids!")
 	print(f"Screen width: {SCREEN_WIDTH}")
 	print(f"Screen height: {SCREEN_HEIGHT}")
 
+=======
+>>>>>>> 689842b (Cleaned up code)
 if __name__ == "__main__":
     main()
 >>>>>>> a20eba5 (Initial commit with basic game loop)
