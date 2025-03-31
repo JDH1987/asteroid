@@ -119,6 +119,12 @@ if __name__ == "__main__":
 		screen.fill("black")
 >>>>>>> 689842b (Cleaned up code)
 
+		for asteroid in asteroids:
+			if player.check_collision(asteroid):
+				print("GAME OVER!")
+				pygame.quit()
+				exit()
+
 		# draw the player
 		for obj in drawable:
 			obj.draw(screen)
