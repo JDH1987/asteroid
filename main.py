@@ -38,23 +38,30 @@ def main():
 =======
 
 def main():
+<<<<<<< HEAD
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
 >>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
+=======
+	pygame.init()
+	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+	clock = pygame.time.Clock()
+>>>>>>> 2342a67 (Added destruction of asteroids. (Or popping of space bubbles))
 
-    updatable = pygame.sprite.Group()
-    drawable = pygame.sprite.Group()
-    asteroids = pygame.sprite.Group()
-    shots = pygame.sprite.Group()
+	updatable = pygame.sprite.Group()
+	drawable = pygame.sprite.Group()
+	asteroids = pygame.sprite.Group()
+	shots = pygame.sprite.Group()
 
-    Asteroid.containers = (asteroids, updatable, drawable)
-    Shot.containers = (shots, updatable, drawable)
-    AsteroidField.containers = updatable
-    asteroid_field = AsteroidField()
+	Asteroid.containers = (asteroids, updatable, drawable)
+	Shot.containers = (shots, updatable, drawable)
+	AsteroidField.containers = updatable
+	asteroid_field = AsteroidField()
 
-    Player.containers = (updatable, drawable)
+	Player.containers = (updatable, drawable)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> f44bf00 (Added groups instead of calling methods directly)
@@ -85,15 +92,22 @@ def main():
 =======
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 >>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
+=======
+	player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+>>>>>>> 2342a67 (Added destruction of asteroids. (Or popping of space bubbles))
 
-    dt = 0
+	dt = 0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 84804ef (Drew a player triangle)
+=======
+>>>>>>> 2342a67 (Added destruction of asteroids. (Or popping of space bubbles))
 	while True:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				return
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,24 +168,39 @@ if __name__ == "__main__":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+=======
+>>>>>>> 2342a67 (Added destruction of asteroids. (Or popping of space bubbles))
 
-        updatable.update(dt)
+		updatable.update(dt)
 
+<<<<<<< HEAD
         for asteroid in asteroids:
             if asteroid.collides_with(player):
                 print("Game over!")
                 sys.exit()
 >>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
+=======
+		for asteroid in asteroids:
+			if asteroid.collides_with(player):
+				print("Game over!")
+				sys.exit()
+>>>>>>> 2342a67 (Added destruction of asteroids. (Or popping of space bubbles))
 
-        screen.fill("black")
+		for asteroid in asteroids:
+			for shot in shots:
+				if shot.collides_with(asteroid):
+					asteroid.kill()
+					shot.kill()
 
-        for obj in drawable:
-            obj.draw(screen)
+		screen.fill("black")
 
-        pygame.display.flip()
+		for obj in drawable:
+			obj.draw(screen)
 
-        # limit the framerate to 60 FPS
-        dt = clock.tick(60) / 1000
+		pygame.display.flip()
+
+		# limit the framerate to 60 FPS
+		dt = clock.tick(60) / 1000
 
 
 <<<<<<< HEAD
@@ -182,5 +211,9 @@ if __name__ == "__main__":
 =======
 >>>>>>> 689842b (Cleaned up code)
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
 >>>>>>> a20eba5 (Initial commit with basic game loop)
+=======
+	main()
+>>>>>>> 2342a67 (Added destruction of asteroids. (Or popping of space bubbles))
