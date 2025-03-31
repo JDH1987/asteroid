@@ -14,6 +14,9 @@ PLAYER_SPEED = 200
 
 PLAYER_SHOOT_SPEED = 500
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e7c7e1f (Added shooting)
 PLAYER_SHOOT_COOLDOWN = 0.3
 
 SHOT_RADIUS = 5
