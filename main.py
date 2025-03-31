@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+# this allows us to use code from
+# the open-source pygame library
+# throughout this file
+>>>>>>> fbfcefc (Cleaned up code)
 import sys
 import pygame
 from constants import *
@@ -30,9 +36,11 @@ def main():
 	drawable = pygame.sprite.Group()
 	asteroids = pygame.sprite.Group()
 
-	Player.containers = (updateable, drawable)
 	Asteroid.containers = (asteroids, updateable, drawable)
-	AsteroidField.containers = (updateable,)
+	AsteroidField.containers = updateable
+	asteroid_field = AsteroidField()
+
+	Player.containers = (updateable, drawable)
 
 <<<<<<< HEAD
 >>>>>>> f44bf00 (Added groups instead of calling methods directly)
@@ -60,9 +68,6 @@ def main():
 >>>>>>> 689842b (Cleaned up code)
 	# spawn player in middle of the screen
 	player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-
-	# Create a new `AsteroidField` object in the initialization code.
-	asteroid_field = AsteroidField()
 
 	dt = 0
 
@@ -111,6 +116,7 @@ if __name__ == "__main__":
 		# call the player's update method
 		updateable.update(dt)
 
+<<<<<<< HEAD
 		# fill the screen with black
 <<<<<<< HEAD
 >>>>>>> 7a88baa (Added WASD movement and turning)
@@ -119,11 +125,15 @@ if __name__ == "__main__":
 		screen.fill("black")
 >>>>>>> 689842b (Cleaned up code)
 
+=======
+>>>>>>> fbfcefc (Cleaned up code)
 		for asteroid in asteroids:
 			if player.check_collision(asteroid):
 				print("GAME OVER!")
-				pygame.quit()
-				exit()
+				sys.exit()
+
+		# fill the screen with black
+		screen.fill("black")
 
 		# draw the player
 		for obj in drawable:
