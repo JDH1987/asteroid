@@ -1,7 +1,8 @@
 import sys
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import *
 from player import Player
+<<<<<<< HEAD
 <<<<<<< HEAD
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
@@ -9,6 +10,10 @@ from shot import Shot
 
 =======
 >>>>>>> 84804ef (Drew a player triangle)
+=======
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
+>>>>>>> a3d3fc2 (Added Asteroids (or space bubbles))
 
 def main():
 	pygame.init()
@@ -23,8 +28,11 @@ def main():
 
 	updateable = pygame.sprite.Group()
 	drawable = pygame.sprite.Group()
+	asteroids = pygame.sprite.Group()
 
 	Player.containers = (updateable, drawable)
+	Asteroid.containers = (asteroids, updateable, drawable)
+	AsteroidField.containers = (updateable,)
 
 <<<<<<< HEAD
 >>>>>>> f44bf00 (Added groups instead of calling methods directly)
@@ -52,6 +60,9 @@ def main():
 >>>>>>> 689842b (Cleaned up code)
 	# spawn player in middle of the screen
 	player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
+	# Create a new `AsteroidField` object in the initialization code.
+	asteroid_field = AsteroidField()
 
 	dt = 0
 
