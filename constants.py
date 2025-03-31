@@ -13,6 +13,7 @@ PLAYER_TURN_SPEED = 300
 PLAYER_SPEED = 200
 
 PLAYER_SHOOT_SPEED = 500
+<<<<<<< HEAD
 PLAYER_SHOOT_COOLDOWN = 0.3
 
 SHOT_RADIUS = 5
@@ -28,3 +29,7 @@ PLAYER_RADIUS = 20
 PLAYER_TURN_SPEED = 300
 PLAYER_SPEED = 200
 >>>>>>> 7a88baa (Added WASD movement and turning)
+=======
+
+SHOT_RADIUS = 5
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)

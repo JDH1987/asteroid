@@ -1,10 +1,14 @@
 import pygame
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
 from constants import *
 from circleshape import CircleShape
 from shot import Shot
 
+<<<<<<< HEAD
 =======
 from constants import PLAYER_RADIUS
 =======
@@ -72,16 +76,18 @@ class Player(CircleShape):
 		super().__init__(x, y, PLAYER_RADIUS) # call parent class constructor
 		self.rotation = 0 # initialize the rotation
 >>>>>>> 7a88baa (Added WASD movement and turning)
+=======
 
-	# in the player class
-	def triangle(self):
-    		forward = pygame.Vector2(0, 1).rotate(self.rotation)
-    		right = pygame.Vector2(0, 1).rotate(self.rotation + 90) * self.radius / 1.5
-    		a = self.position + forward * self.radius
-    		b = self.position - forward * self.radius - right
-    		c = self.position - forward * self.radius + right
-    		return [a, b, c]
+class Player(CircleShape):
+    def __init__(self, x, y):
+        super().__init__(x, y, PLAYER_RADIUS)
+        self.rotation = 0
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
 
+    def draw(self, screen):
+        pygame.draw.polygon(screen, "white", self.triangle(), 2)
+
+<<<<<<< HEAD
 	def draw(self, screen):
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,19 +100,38 @@ class Player(CircleShape):
 =======
 		pygame.draw.polygon(screen, "white", self.triangle(), 2) # draw the triangle
 >>>>>>> 689842b (Cleaned up code)
+=======
+    def triangle(self):
+        forward = pygame.Vector2(0, 1).rotate(self.rotation)
+        right = pygame.Vector2(0, 1).rotate(self.rotation + 90) * self.radius / 1.5
+        a = self.position + forward * self.radius
+        b = self.position - forward * self.radius - right
+        c = self.position - forward * self.radius + right
+        return [a, b, c]
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
 
-	def rotate(self, dt):
-		self.rotation += PLAYER_TURN_SPEED * dt # rotate based on turn speed
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
 
-	def update(self, dt):
-		keys = pygame.key.get_pressed()
+        if keys[pygame.K_w]:
+            self.move(dt)
+        if keys[pygame.K_s]:
+            self.move(-dt)
+        if keys[pygame.K_a]:
+            self.rotate(-dt)
+        if keys[pygame.K_d]:
+            self.rotate(dt)
+        if keys[pygame.K_SPACE]:
+            self.shoot()
 
-		if keys[pygame.K_a]:
-			self.rotate(-dt)
+    def shoot(self):
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
 
-		if keys[pygame.K_d]:
-			self.rotate(dt)
+    def rotate(self, dt):
+        self.rotation += PLAYER_TURN_SPEED * dt
 
+<<<<<<< HEAD
 		if keys[pygame.K_w]:
 			self.move(dt)
 
@@ -117,3 +142,8 @@ class Player(CircleShape):
 		forward = pygame.Vector2(0, 1).rotate(self.rotation)
 		self.position += forward * PLAYER_SPEED * dt
 >>>>>>> 7a88baa (Added WASD movement and turning)
+=======
+    def move(self, dt):
+        forward = pygame.Vector2(0, 1).rotate(self.rotation)
+        self.position += forward * PLAYER_SPEED * dt
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)

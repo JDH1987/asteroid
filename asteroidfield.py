@@ -49,7 +49,11 @@ class AsteroidField(pygame.sprite.Sprite):
             position = edge[1](random.uniform(0, 1))
             kind = random.randint(1, ASTEROID_KINDS)
 <<<<<<< HEAD
+<<<<<<< HEAD
             self.spawn(ASTEROID_MIN_RADIUS * kind, position, velocity)
 =======
             self.spawn(ASTEROID_MIN_RADIUS * kind, position, velocity)
 >>>>>>> a3d3fc2 (Added Asteroids (or space bubbles))
+=======
+            self.spawn(ASTEROID_MIN_RADIUS * kind, position, velocity)
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)

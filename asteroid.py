@@ -1,13 +1,18 @@
 import pygame
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 import random
 =======
 >>>>>>> a3d3fc2 (Added Asteroids (or space bubbles))
 from constants import *
+=======
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
 from circleshape import CircleShape
 
+
 class Asteroid(CircleShape):
+<<<<<<< HEAD
 	def __init__(self, x, y, radius):
 		super().__init__(x, y, radius)
 <<<<<<< HEAD
@@ -38,10 +43,19 @@ class Asteroid(CircleShape):
 			asteroid2.velocity = new_velocity2 * 1.2
 =======
 		self.radius = radius
+=======
+    def __init__(self, x, y, radius):
+        super().__init__(x, y, radius)
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
 
-	def draw(self, surface):
-		pygame.draw.circle(surface, "white", (int(self.position.x), int(self.position.y)), self.radius, 2)
+    def draw(self, screen):
+        pygame.draw.circle(screen, "white", self.position, self.radius, 2)
 
+<<<<<<< HEAD
 	def update(self, dt):
 		self.position += self.velocity * dt
 >>>>>>> a3d3fc2 (Added Asteroids (or space bubbles))
+=======
+    def update(self, dt):
+        self.position += self.velocity * dt
+>>>>>>> 5d2b3b1 (Added shooting. Cleaned up code to match solution files)
