@@ -124,6 +124,7 @@ def main():
 			for shot in shots:
 				if shot.collides_with(asteroid):
 					asteroid.split()
+<<<<<<< HEAD
 					shot.kill()
 
 		screen.fill("black")
@@ -190,6 +191,8 @@ if __name__ == "__main__":
 			for shot in shots:
 				if shot.collides_with(asteroid):
 					asteroid.kill()
+=======
+>>>>>>> 676c1dc (The big asteroids break into smaller asteroids when a bullet collides with it)
 					shot.kill()
 
 		screen.fill("black")
